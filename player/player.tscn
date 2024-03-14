@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciq3j31fram7q"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_xo83b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuc0j"]
+
+[sub_resource type="TextMesh" id="TextMesh_ehjg3"]
+material = SubResource("StandardMaterial3D_nuc0j")
+text = "1"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yd7ts"]
+size = Vector3(0.5, 0.75, 0.25)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_xo83b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("TextMesh_ehjg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yd7ts")
